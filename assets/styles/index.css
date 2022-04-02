@@ -1,0 +1,21 @@
+/* Things to put in Global Styles */
+
+/* 
+  - Transitions
+  - Fonts
+  - Header and paragraph font sizes
+  - Scroll behaviour
+  - 
+*/
+/*? Let's F**king go! */
+
+@import url('https://fonts.googleapis.com/css2?family=Inria+Sans:wght@300;400&display=swap');
+
+html {
+  scroll-behavior: smooth;
+}
+
+textarea {
+  resize: none;
+  font-family: 'Inria', sans-serif;
+}

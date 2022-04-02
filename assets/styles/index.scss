@@ -1,0 +1,37 @@
+// Mixins
+
+@mixin fr {
+  display: flex;
+  flex-direction: row;
+}
+@mixin fc {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin aic {
+  display: flex;
+  align-items: center;
+}
+
+@mixin jcc {
+  display: flex;
+  justify-content: center;
+}
+@mixin inria {
+  font-family: 'Inria', sans-serif;
+}
+
+a {
+  @include inria();
+  text-decoration: none;
+  color: #000;
+}
+
+p {
+  @include inria();
+}
+
+h1 {
+  @include inria();
+}
