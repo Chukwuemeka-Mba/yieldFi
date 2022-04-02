@@ -77,7 +77,7 @@ nav {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  // width: 100%;
+  padding: 5px 10px;
   box-shadow: 0px 0.2px 2px gray;
 
   .logo-links {
@@ -129,12 +129,19 @@ nav {
     margin: 5px 10px;
   }
 
-  @media screen and (max-width: 900px) {
+  @media screen and (max-width: 1000px) {
     .nav-items {
       display: none !important;
     }
     .lang {
       display: none;
+    }
+    .ham-links {
+      .hl1 {
+        .lang {
+          display: none;
+        }
+      }
     }
   }
 }

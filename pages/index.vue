@@ -1,5 +1,13 @@
 <template>
-  <div></div>
+  <main>
+    <section class="section"></section>
+    <section class="section"></section>
+    <section class="section"></section>
+    <section class="section"></section>
+    <section class="section"></section>
+    <section class="section"></section>
+    <section class="section"></section>
+  </main>
 </template>
 
 <script>
@@ -21,3 +29,12 @@ export default {
   },
 }
 </script>
+
+<style lang="scss" scoped>
+main {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-areas: '';
+}
+</style>
