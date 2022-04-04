@@ -34,6 +34,7 @@ export default {
   align-items: center;
   text-align: left;
   gap: 30px;
+  z-index: 2;
   width: 200px;
   .title {
     font-weight: 900;

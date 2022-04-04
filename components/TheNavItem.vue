@@ -51,7 +51,8 @@ export default {
 </script>
 <style lang="scss" scoped>
 .drop {
-  background-color: #fff;
+  // background-color: #fff;
+  z-index: 2;
   .row {
     display: flex;
     flex-direction: row;

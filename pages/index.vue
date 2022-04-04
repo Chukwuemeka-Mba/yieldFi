@@ -5,7 +5,10 @@
         <!-- Info  -->
         <div class="info">
           <div class="info-head">
-            <h1>Buy, trade, and hold 600+ cryptocurrencies on Yield Fi</h1>
+            <h1>
+              Buy, trade, and hold 600+ <br />cryptocurrencies on <br />
+              Yield Fi
+            </h1>
           </div>
           <div class="input">
             <input class="form" type="text" placeholder="Email/Phone Number" />
@@ -140,6 +143,7 @@ main {
       .info-head {
         h1 {
           font-size: 48px;
+          z-index: -3;
         }
       }
       .input {
