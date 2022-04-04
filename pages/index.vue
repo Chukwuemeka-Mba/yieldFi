@@ -53,14 +53,13 @@
       </div>
     </section>
     <section class="section2">
-      section2
       <TheMarket />
     </section>
-    <section class="section3">section2</section>
-    <section class="section4">section2</section>
-    <section class="section5">section2</section>
-    <section class="section6">section2</section>
-    <section class="section7">section2</section>
+    <!-- <section class="section3">section3</section>
+    <section class="section4">section4</section>
+    <section class="section5">section5</section>
+    <section class="section6">section6</section>
+    <section class="section7">section7</section> -->
   </main>
 </template>
 
@@ -88,15 +87,16 @@ export default {
 main {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
   grid-template-areas:
     's1'
     's2'
-    's3'
-    's4'
-    's5'
-    's6'
-    's7';
+    // 's3'
+    // 's4'
+    // 's5'
+    // 's6'
+    // 's7'
+;
 
   .section1 {
     grid-area: s1;
@@ -113,7 +113,6 @@ main {
         grid-template-columns: repeat(2, 0.3fr);
         gap: 10px;
         grid-auto-rows: minmax(10px, auto);
-        padding-right: 40px;
         .card {
           display: flex;
           flex-direction: column;
@@ -125,7 +124,7 @@ main {
           box-shadow: 0px 5px 9px 2px rgba(69, 104, 209, 0.06);
         }
         .card:hover {
-          opacity: 0.8;
+          opacity: 0.6;
         }
       }
     }
@@ -144,6 +143,7 @@ main {
         }
       }
       .input {
+        margin-top: 100px;
         .form {
           height: 40px;
           border: 1px solid #aaaaaa9d;
@@ -165,10 +165,11 @@ main {
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
-      justify-content: space-around;
+      justify-content: space-evenly;
       margin: 20px;
       .stat {
         padding: 10px 10px;
+        gap: 20px;
         h1 {
           font-weight: 600;
           font-size: 40px;
@@ -209,6 +210,18 @@ main {
 
   .section7 {
     grid-area: s7;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  main {
+    .section1 {
+      .top {
+        .cards {
+          display: none;
+        }
+      }
+    }
   }
 }
 </style>
