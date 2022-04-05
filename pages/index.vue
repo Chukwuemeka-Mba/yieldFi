@@ -1,5 +1,8 @@
 <template>
   <main>
+    <nav>
+      <TheNavbar />
+    </nav>
     <section class="section1">
       <div class="top">
         <!-- Info  -->
@@ -58,9 +61,32 @@
     <section class="section2">
       <TheMarket />
     </section>
-    <!-- <section class="section3">section3</section>
-    <section class="section4">section4</section>
-    <section class="section5">section5</section>
+    <section class="section3">
+      <div class="faq">
+        <div class="text">
+          <h1>Questions we get the most</h1>
+          <p>
+            If others are asking, then you're probably thinking the same thing.
+            <br />Here are some answers that would help.
+          </p>
+        </div>
+        <div class="drop-cards">
+          <TheFaq v-for="faq in faqs" :faq="faq" :key="faq.id" />
+        </div>
+        <div class="action">
+          <div class="text2">
+            <h1>Got additional questions?</h1>
+            <p>We would love to have a chat with you</p>
+          </div>
+          <router-link to="">
+            <button type="submit">Get Started</button>
+          </router-link>
+        </div>
+      </div>
+    </section>
+
+    <!-- <section class="section4"></section> -->
+    <!-- <section class="section5">section5</section>
     <section class="section6">section6</section>
     <section class="section7">section7</section> -->
   </main>
@@ -83,32 +109,50 @@ export default {
       ],
     }
   },
+  data() {
+    return {
+      faqs: this.$store.state.faqs,
+    }
+  },
 }
 </script>
 
 <style lang="scss" scoped>
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+//* Mixins
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+}
+@mixin google-sans {
+  font-family: 'Poppins', sans-serif;
+}
+@mixin zona-pro {
+  font-family: 'Poppins', sans-serif;
+}
 main {
+  font-family: 'Poppins', sans-serif;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: 0.2fr 0.5fr 0.5fr 1fr;
   grid-template-areas:
+    'nav'
     's1'
     's2'
-    // 's3'
-    // 's4'
-    // 's5'
-    // 's6'
-    // 's7'
-;
+    's3';
 
+  nav {
+    grid-area: nav;
+  }
   .section1 {
     grid-area: s1;
-    height: 100vh;
 
     .top {
       display: flex;
       flex-direction: row;
       justify-content: space-around;
+      margin-top: 150px;
       .cards {
         margin-top: 50px;
         display: grid;
@@ -138,16 +182,17 @@ main {
       margin: 30px;
       @media screen and (min-width: 800px) {
         margin-top: 80px;
-        margin-left: 50px;
+        margin-left: 30px;
       }
       .info-head {
         h1 {
+          font-family: 'Poppins', sans-serif;
           font-size: 48px;
-          z-index: -3;
         }
       }
       .input {
-        margin-top: 100px;
+        margin-top: 10px;
+        font-family: 'Poppins', sans-serif;
         .form {
           height: 40px;
           border: 1px solid #aaaaaa9d;
@@ -157,10 +202,12 @@ main {
         }
         .button {
           height: 46px;
-          background-color: #fcd535;
+          font-family: 'Poppins', sans-serif;
+          background-color: #010b12;
           border: 0px;
           border-radius: 5px;
           padding: 5px 30px;
+          color: #9cff00;
         }
       }
     }
@@ -168,25 +215,29 @@ main {
     .stats {
       display: flex;
       flex-direction: row;
+      justify-content: space-between;
       flex-wrap: wrap;
-      justify-content: space-evenly;
-      margin: 20px;
+      margin: 0px 10%;
       .stat {
-        padding: 10px 10px;
+        padding: 15px 30px;
         gap: 20px;
+        width: 200px;
         h1 {
+          font-family: 'Poppins', sans-serif;
           font-weight: 600;
           font-size: 40px;
           line-height: 48px;
+          color: #010b12;
         }
         p {
           box-sizing: border-box;
+          font-family: 'Poppins', sans-serif;
           margin: 0;
           min-width: 0;
           font-weight: 400;
           font-size: 14px;
           line-height: 16px;
-          color: #1e2329;
+          color: #010b12;
         }
       }
     }
@@ -194,30 +245,68 @@ main {
 
   .section2 {
     grid-area: s2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 150px 0px;
+    background-color: #fefefe;
   }
 
   .section3 {
     grid-area: s3;
-  }
+    margin-top: 150px;
+    .faq {
+      @include flex-center();
+      flex-direction: column;
+      text-align: center;
+      grid-area: faq;
+      background: #b2e3b637;
+      margin: 50px 75px;
+      border-radius: 25px;
 
-  .section4 {
-    grid-area: s4;
-  }
-
-  .section5 {
-    grid-area: s5;
-  }
-
-  .section6 {
-    grid-area: s6;
-  }
-
-  .section7 {
-    grid-area: s7;
+      .text {
+        margin-top: 100px;
+      }
+      .text {
+        h1 {
+          font-size: 38px;
+        }
+        p {
+          font-size: 17px;
+        }
+      }
+      .text2 {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        margin-top: 30px;
+        h1 {
+          @include zona-pro();
+        }
+        p {
+          font-family: 'Poppins', sans-serif;
+          font-weight: 400;
+          margin-bottom: 40px;
+        }
+      }
+      .action {
+        @include flex-center();
+        flex-direction: column;
+        width: 300px;
+        text-align: center;
+        margin-top: 40px;
+        margin-bottom: 150px;
+      }
+      .text2 h1 {
+        font-size: 22px;
+        font-weight: 900;
+        margin-bottom: 20px;
+      }
+    }
   }
 }
 
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 950px) {
   main {
     .section1 {
       .top {
@@ -225,6 +314,19 @@ main {
           display: none;
         }
       }
+      .info {
+        .input {
+          margin-top: 10px;
+        }
+      }
+      .stats {
+        margin-top: 150px;
+        margin-bottom: 150px;
+      }
+    }
+
+    .section3 {
+      margin-top: 150px;
     }
   }
 }

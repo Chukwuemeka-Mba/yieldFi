@@ -3,7 +3,7 @@
     <section class="section1">
       <div class="logo">
         <nuxt-link to="/">
-          <img src="../assets/img/yield-dark2.png" alt="logo" width="150px"
+          <img src="../assets/img/yield-dark.png" alt="logo" width="150px"
         /></nuxt-link>
       </div>
     </section>
@@ -174,8 +174,10 @@ export default {}
 </script>
 
 <style lang="scss">
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
 footer {
-  font-family: 'Inria', sans-serif;
+  font-family: 'Poppins', sans-serif;
   width: 100%;
   height: 1fr;
   bottom: 0px;
@@ -185,7 +187,7 @@ footer {
     grid-area: s1;
     margin: 3% 3%;
     .logo {
-      padding: 10px 20px;
+      padding: 10px 4%;
     }
   }
   .section2 {
@@ -203,6 +205,7 @@ footer {
       p {
         font-size: 14px;
         opacity: 0.3;
+        font-family: 'Poppins', sans-serif;
       }
     }
   }
@@ -217,7 +220,7 @@ footer {
       margin-top: 40px;
       .item {
         a:hover {
-          color: rgb(224, 214, 68);
+          color: #2bc20e;
         }
       }
     }
@@ -226,13 +229,21 @@ footer {
     grid-area: s4;
     display: flex;
     justify-content: center;
-    font-family: 'Inria', sans-serif;
+    font-family: 'Poppins', sans-serif;
     margin-top: 40px;
+    p {
+      font-family: 'Poppins', sans-serif;
+    }
   }
 }
 
 @media screen and (max-width: 600px) {
   footer {
+    .section1 {
+      .logo {
+        padding-left: 25px;
+      }
+    }
     .section2 {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -245,6 +256,7 @@ footer {
       .social {
         justify-content: start;
         margin-left: 40px;
+        font-family: 'Poppins', sans-serif;
       }
     }
     .section4 {

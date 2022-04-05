@@ -3,7 +3,7 @@
     <div class="logo-links">
       <div class="hl1">
         <div class="hl1">
-          <img src="../assets/img/yield-light.png" alt="" width="110" />
+          <img src="../assets/img/yield-dark.png" alt="" width="110" />
           <div>
             <nuxt-link class="hl1" to=""
               ><svg
@@ -72,25 +72,32 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 nav {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  font-family: 'Poppins', sans-serif;
   align-items: center;
-  padding: 5px 10px;
-  box-shadow: 0px 0.2px 2px gray;
+  padding: 10px 10px;
+  box-shadow: 0px 0.2px 12px gray;
 
   .logo-links {
     display: flex;
     align-items: center;
     .hl1 {
+      font-family: 'Poppins', sans-serif;
       display: flex;
       flex-direction: row;
       align-items: center;
       gap: 10px;
-      font-size: 14px;
+      font-size: 15px;
+      a {
+        font-family: 'Poppins', sans-serif;
+      }
       a:hover {
-        color: #d8b930;
+        text-decoration: underline #39ff13;
+        font-family: 'Poppins', sans-serif;
       }
       img {
         margin: 5px 15px;
@@ -108,20 +115,26 @@ nav {
     justify-content: space-around;
     align-items: center;
     .hl1 {
+      font-family: 'Poppins', sans-serif;
       display: flex;
       flex-direction: row;
       align-items: center;
       gap: 10px;
-      font-size: 14px;
+      font-size: 15px;
+      a {
+        font-family: 'Poppins', sans-serif;
+      }
       a:hover {
-        color: #d8b930;
+        text-decoration: none;
       }
       .signup {
-        background: #ffe832;
-        padding: 5px 10px;
+        font-family: 'Poppins', sans-serif;
+        background: #010b12;
+        padding: 10px 15px;
         border-radius: 5px;
         font-weight: 400;
-        color: #000 !important;
+        color: #9cff00 !important;
+        text-decoration: none;
       }
     }
   }

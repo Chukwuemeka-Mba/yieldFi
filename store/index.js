@@ -238,4 +238,50 @@ export const state = {
       icon: '',
     },
   ],
+  faqs: [
+    {
+      id: 1,
+      question: 'How is MAU calculated?',
+      answer:
+        'Tax is not included in the prices listed on the pricing page. Tax will be included in your billing receipts.',
+    },
+    {
+      id: 2,
+      question:
+        'What is the difference between Starter, Pro, and Enterprise plans?',
+      answer:
+        'Tax is not included in the prices listed on the pricing page. Tax will be included in your billing receipts.',
+    },
+    {
+      id: 3,
+      question: 'What happens if I hit my MAU limit?',
+      answer:
+        'Tax is not included in the prices listed on the pricing page. Tax will be included in your billing receipts.',
+    },
+    {
+      id: 4,
+      question: 'How do I purchase higher levels of support?',
+      answer:
+        'Tax is not included in the prices listed on the pricing page. Tax will be included in your billing receipts.',
+    },
+    {
+      id: 5,
+      question: 'What other limits do I need to be aware of?',
+      answer:
+        'Tax is not included in the prices listed on the pricing page. Tax will be included in your billing receipts.',
+    },
+    {
+      id: 6,
+      question:
+        'Is every feature automatically included in the enterprise plan?',
+      answer:
+        'Tax is not included in the prices listed on the pricing page. Tax will be included in your billing receipts.',
+    },
+    {
+      id: 7,
+      question: 'Do the prices listed on the pricing page include tax?',
+      answer:
+        'Tax is not included in the prices listed on the pricing page. Tax will be included in your billing receipts.',
+    },
+  ],
 }

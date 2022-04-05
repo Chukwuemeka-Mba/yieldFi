@@ -21,7 +21,10 @@
             <td :class="coin.price_change_percentage_24h > 1 ? 'green' : 'red'">
               {{ coin.price_change_percentage_24h.toFixed(2) }}
             </td>
-            <td>$ {{ coin.market_cap.toLocaleString() }}</td>
+            <td>
+              $
+              {{ Math.abs(Number(coin.market_cap)).toFixed(2) / 1.0e6 + 'M' }}
+            </td>
           </tr>
         </tbody>
       </table>
@@ -57,6 +60,8 @@ export default {
 }
 </script>
 <style lang="scss">
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
 @mixin fr {
   display: flex;
   flex-direction: row;
@@ -84,6 +89,7 @@ export default {
   margin-left: 40px;
   h1 {
     box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
     margin: 0;
     min-width: 0;
     font-weight: 600;
@@ -91,27 +97,31 @@ export default {
     line-height: 32px;
     margin-top: 40px;
     margin-bottom: 16px;
-    color: #1e2329;
+    color: #010b12;
   }
   button {
+    font-family: 'Poppins', sans-serif;
     height: 46px;
-    background-color: #fcd535;
+    background-color: #010b12;
     border: 0px;
     border-radius: 5px;
     padding: 5px 30px;
+    color: #9cff00;
   }
 }
 .table {
   padding: 20px 10px;
+  font-family: 'Poppins', sans-serif;
+  min-width: 900px;
 }
 table {
-  @include inria();
+  font-family: 'Poppins', sans-serif;
   width: 100%;
   height: auto;
   overflow-y: hidden;
   text-align: start;
   border-collapse: collapse;
-  background-color: #ffff;
+  background-color: #fefefe;
 }
 table td,
 table th {
@@ -124,6 +134,7 @@ table th {
   opacity: 0.3;
   font-weight: 400;
   font-size: 14px;
+  padding: 0.2% 4%;
 }
 table tbody tr td:nth-child(1) {
   padding: 10px 18px;
@@ -133,7 +144,8 @@ table tbody tr td:nth-child(1) {
   gap: 15px;
 }
 table tbody tr:hover {
-  background-color: rgb(235, 235, 235);
+  background-color: #b2e3b637;
+  border-radius: 7px;
 }
 
 .symbol {

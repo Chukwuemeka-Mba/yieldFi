@@ -1,18 +1,18 @@
 <template lang="">
   <div class="drop">
-    <div class="row hover">
+    <div class="row hover" @mouseover="showMenu" @mouseleave="hideMenu">
       <p>{{ item.name }}</p>
 
       <div v-if="dropList != ''" class="hover">
         <font-awesome-icon
           :class="{ icon2: !setHidden }"
           icon="caret-down"
-          @click="setHidden = !setHidden"
+          @click="showMenu"
         />
         <font-awesome-icon
           :class="{ icon1: setHidden }"
           icon="caret-up"
-          @click="setHidden = !setHidden"
+          @click="hideMenu"
         />
       </div>
     </div>
@@ -35,7 +35,7 @@ export default {
   },
   data() {
     return {
-      setHidden: 'false',
+      setHidden: true,
       dropList: this.item.dropItems,
     }
   },
@@ -46,25 +46,34 @@ export default {
     logItem() {
       console.log(this.dropList)
     },
+    showMenu() {
+      this.setHidden = false
+    },
+    hideMenu() {
+      this.setHidden = true
+    },
   },
 }
 </script>
 <style lang="scss" scoped>
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
 .drop {
-  // background-color: #fff;
-  z-index: 2;
+  background-color: #fff;
   .row {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     gap: 15px;
+    font-family: 'Poppins', sans-serif;
     p {
+      font-family: 'Poppins', sans-serif;
       font-size: 14px;
       text-align: left;
     }
     .hover:hover {
-      color: #d8b930;
+      color: #39ff13;
     }
   }
 }
@@ -80,9 +89,9 @@ export default {
   font-size: 50px;
 }
 .hover:hover {
-  color: #d8b930;
+  color: #39ff13;
   p:hover {
-    color: #d8b930;
+    color: #39ff13;
   }
 }
 .drop-list {
@@ -94,5 +103,7 @@ export default {
   position: absolute;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   margin-top: 10px;
+  background-color: #fff;
+  font-family: 'Poppins', sans-serif;
 }
 </style>

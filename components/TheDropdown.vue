@@ -1,7 +1,7 @@
 <template>
-  <div class="dropdown title">
+  <div class="dropdown">
     <div></div>
-    <div>
+    <div class="head">
       <p class="title">{{ listItem.title }}</p>
       <p>{{ listItem.description }}</p>
     </div>
@@ -27,16 +27,19 @@ export default {
 }
 </script>
 <style lang="scss">
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
 .dropdown {
   display: flex;
   flex-direction: row;
   margin: 5px 10px;
   align-items: center;
   text-align: left;
+  font-family: 'Poppins', sans-serif;
   gap: 30px;
-  z-index: 2;
   width: 200px;
   .title {
+    font-family: 'Poppins', sans-serif;
     font-weight: 900;
     font-size: 16px;
   }
@@ -45,6 +48,13 @@ export default {
     padding-right: 10px;
     width: 50px;
   }
+  .head {
+    .title {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 900;
+      font-size: 16px;
+    }
+  }
 }
 
 .dropdown:hover {
@@ -52,7 +62,7 @@ export default {
   border-radius: 5px;
   .arrow {
     display: block;
-    color: #d8b930;
+    color: #39ff13;
   }
 }
 </style>

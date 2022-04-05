@@ -1,6 +1,5 @@
 <template lang="">
   <div>
-    <TheNavbar />
     <Nuxt />
     <TheFooter />
   </div>
@@ -11,5 +10,6 @@ export default {}
 <style lang="scss">
 body {
   margin: 0px;
+  background-color: #f4f4f4;
 }
 </style>
