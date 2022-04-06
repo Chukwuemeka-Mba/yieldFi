@@ -1,6 +1,6 @@
 <template lang="">
-  <div class="drop">
-    <div class="row hover" @mouseover="showMenu" @mouseleave="hideMenu">
+  <div class="drop" @mouseover="showMenu" @mouseleave="hideMenu">
+    <div class="row hover">
       <p>{{ item.name }}</p>
 
       <div v-if="dropList != ''" class="hover">
@@ -59,7 +59,7 @@ export default {
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
 .drop {
-  background-color: #fff;
+  background-color: #f7f7f7;
   .row {
     display: flex;
     flex-direction: row;
@@ -73,7 +73,7 @@ export default {
       text-align: left;
     }
     .hover:hover {
-      color: #39ff13;
+      color: #265a91;
     }
   }
 }
@@ -89,9 +89,9 @@ export default {
   font-size: 50px;
 }
 .hover:hover {
-  color: #39ff13;
+  color: #265a91;
   p:hover {
-    color: #39ff13;
+    color: #265a91;
   }
 }
 .drop-list {
@@ -102,7 +102,6 @@ export default {
   flex-direction: column;
   position: absolute;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  margin-top: 10px;
   background-color: #fff;
   font-family: 'Poppins', sans-serif;
 }

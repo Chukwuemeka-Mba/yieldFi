@@ -3,7 +3,7 @@
     <section class="section1">
       <div class="logo">
         <nuxt-link to="/">
-          <img src="../assets/img/yield-dark.png" alt="logo" width="150px"
+          <img src="../assets/img/yield-light.png" alt="logo" width="150px"
         /></nuxt-link>
       </div>
     </section>

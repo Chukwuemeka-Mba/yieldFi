@@ -9,9 +9,9 @@
         <div class="info">
           <div class="info-head">
             <h1>
-              Join 600+ Small <br />Businesses to trade with
-              <br />
-              crypto on Yield Fi
+              <span style="font-size: 48px">Join 600+ </span>
+              <span style="font-size: 30px">Small Businesses to</span><br />
+              Earn in crypto on YieldFi
             </h1>
           </div>
           <div class="input">
@@ -27,7 +27,7 @@
           </div>
           <div class="card">
             <img src="../assets/img/coin-img-2.png" alt="" width="150" />
-            <p>YTC Ether</p>
+            <p>Yield Marketplace</p>
           </div>
           <div class="card">
             <img src="../assets/img/coin-img-3.png" alt="" width="150" />
@@ -61,7 +61,8 @@
     <section class="section2">
       <TheMarket />
     </section>
-    <section class="section3">
+    <section class="section3"><TheCarousel /></section>
+    <section class="section4">
       <div class="faq">
         <div class="text">
           <h1>Questions we get the most</h1>
@@ -92,14 +93,14 @@
       </div>
     </section>
 
-    <section class="section4"><TheAction /></section>
-    <!-- <section class="section5"><TheFooter /></section> -->
+    <section class="section5"><TheAction /></section>
     <!-- <section class="section6">section6</section>
     <section class="section7">section7</section> -->
   </main>
 </template>
 
 <script>
+import TheCarousel from '~/components/TheCarousel.vue'
 export default {
   name: 'HomePage',
   head() {
@@ -120,6 +121,7 @@ export default {
       faqs: this.$store.state.faqs,
     }
   },
+  components: { TheCarousel },
 }
 </script>
 
@@ -147,7 +149,8 @@ main {
     's1'
     's2'
     's3'
-    's4';
+    's4'
+    's5';
 
   nav {
     grid-area: nav;
@@ -163,18 +166,21 @@ main {
         margin-top: 50px;
         display: grid;
         align-items: center;
-        grid-template-columns: repeat(2, 0.3fr);
-        gap: 10px;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 5px;
         grid-auto-rows: minmax(10px, auto);
         .card {
           display: flex;
           flex-direction: column;
           align-items: center;
           border-radius: 5px;
-          margin: 10px;
           max-width: 170px;
           padding: 20px;
           box-shadow: 0px 5px 9px 2px rgba(69, 104, 209, 0.06);
+          p {
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px;
+          }
         }
         .card:hover {
           opacity: 0.6;
@@ -200,7 +206,7 @@ main {
           border: 1px solid #aaaaaa9d;
           border-radius: 5px;
           padding: 2px 10px;
-          width: 40%;
+          width: 60%;
         }
         .button {
           height: 46px;
@@ -254,9 +260,13 @@ main {
     padding: 50px 0px;
     background-color: #fefefe;
   }
-
   .section3 {
     grid-area: s3;
+    padding: 5rem 1.5rem;
+    background-color: #fff;
+  }
+  .section4 {
+    grid-area: s4;
     background-color: #fff;
     padding: 5rem 1.5rem;
     .faq {
@@ -321,16 +331,10 @@ main {
     }
   }
 
-  .section4 {
-    grid-area: s4;
-    padding: 5rem 1.5rem;
-    background-color: #fff;
-  }
-
   .section5 {
     grid-area: s5;
-    position: relative;
-    bottom: 0px;
+    padding: 5rem 1.5rem;
+    background-color: #fff;
   }
 }
 
@@ -358,7 +362,7 @@ main {
       }
     }
 
-    .section3 {
+    .section4 {
       background-color: #f5f7fc;
       .faq {
         display: flex;

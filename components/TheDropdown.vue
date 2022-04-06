@@ -1,8 +1,13 @@
 <template>
   <div class="dropdown">
-    <div></div>
     <div class="head">
-      <p class="title">{{ listItem.title }}</p>
+      <div class="image">
+        <img
+          v-if="listItem.icon"
+          :src="require(`~/assets/icons/${listItem.icon}`)"
+        />
+        <p class="title">{{ listItem.title }}</p>
+      </div>
       <p>{{ listItem.description }}</p>
     </div>
     <div class="arrow">
@@ -32,12 +37,23 @@ export default {
 .dropdown {
   display: flex;
   flex-direction: row;
-  margin: 5px 10px;
+  margin: 10px 10px;
+  padding: 10px 10px;
   align-items: center;
   text-align: left;
   font-family: 'Poppins', sans-serif;
   gap: 30px;
-  width: 200px;
+  width: 250px;
+  .image {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    img {
+      z-index: 2;
+      width: 50px;
+    }
+  }
   .title {
     font-family: 'Poppins', sans-serif;
     font-weight: 900;
@@ -62,7 +78,8 @@ export default {
   border-radius: 5px;
   .arrow {
     display: block;
-    color: #39ff13;
+    color: #265a91;
+    font-weight: 900;
   }
 }
 </style>
