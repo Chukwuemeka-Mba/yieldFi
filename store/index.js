@@ -197,7 +197,7 @@ export const state = {
           id: 8,
           title: 'Dual Investment',
           description: 'Commit your crypto holdings and enjoy high returns',
-          icon: '',
+          icon: 'case.png',
         },
         {
           id: 9,
@@ -227,7 +227,7 @@ export const state = {
           id: 3,
           title: 'Yield Pay',
           description: 'Send and spend Crypto at zero fees',
-          icon: 'chain.jpeg',
+          icon: 'cash..png',
         },
       ],
     },
