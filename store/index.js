@@ -227,7 +227,7 @@ export const state = {
           id: 3,
           title: 'Yield Pay',
           description: 'Send and spend Crypto at zero fees',
-          icon: 'cash..png',
+          icon: 'cash.png',
         },
       ],
     },
