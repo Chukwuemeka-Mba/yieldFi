@@ -1,5 +1,8 @@
 <template lang="">
   <div>
+    <div class="title">
+      <h1>Market Data</h1>
+    </div>
     <div class="table">
       <table>
         <thead>
@@ -7,11 +10,11 @@
             <th>Name</th>
             <th>Last Price</th>
             <th>24h Change</th>
-            <th>Market Cap</th>
+            <th class="market-cap">Market Cap</th>
           </tr>
         </thead>
         <tbody>
-          <tr v-for="(coin, index) in marketData.slice(0, 10)" :key="index">
+          <tr v-for="(coin, index) in marketData.slice(0, 7)" :key="index">
             <td>
               <img :src="`${coin.image}`" alt="" width="30" />
               <span> {{ coin.name }}</span>
@@ -21,9 +24,13 @@
             <td :class="coin.price_change_percentage_24h > 1 ? 'green' : 'red'">
               {{ coin.price_change_percentage_24h.toFixed(2) }}
             </td>
-            <td>
+            <td class="market-cap">
               $
-              {{ Math.abs(Number(coin.market_cap)).toFixed(2) / 1.0e6 + 'M' }}
+              {{
+                (Math.abs(Number(coin.market_cap)) / 1.0e6)
+                  .toFixed(0)
+                  .toLocaleString() + 'M'
+              }}
             </td>
           </tr>
         </tbody>
@@ -31,8 +38,11 @@
     </div>
 
     <div class="action">
-      <h1>Sign up now to build your own portfolio for free!</h1>
-      <button type="submit">Get Started</button>
+      <h1>Sign up now to create your business portfolio for free!</h1>
+      <button type="submit">
+        Get Started
+        <font-awesome-icon style="margin-left: 10px" icon="angle-right" />
+      </button>
     </div>
   </div>
 </template>
@@ -83,7 +93,15 @@ export default {
 @mixin inria {
   font-family: 'Inria', sans-serif;
 }
-
+.title {
+  h1 {
+    margin: 10px 40px;
+    font-size: 25px;
+  }
+  h1:hover {
+    color: #2a5ac2;
+  }
+}
 .action {
   @include inria();
   margin-left: 40px;
@@ -102,11 +120,12 @@ export default {
   button {
     font-family: 'Poppins', sans-serif;
     height: 46px;
-    background-color: #010b12;
+    background-color: #2a5ac2;
     border: 0px;
     border-radius: 5px;
     padding: 5px 30px;
-    color: #9cff00;
+    margin-top: 30px;
+    color: #fff;
   }
 }
 .table {
@@ -116,7 +135,7 @@ export default {
 }
 table {
   font-family: 'Poppins', sans-serif;
-  width: 100%;
+  width: 90%;
   height: auto;
   overflow-y: hidden;
   text-align: start;
@@ -144,7 +163,7 @@ table tbody tr td:nth-child(1) {
   gap: 15px;
 }
 table tbody tr:hover {
-  background-color: #b2e3b637;
+  background-color: #e5edff;
   border-radius: 7px;
 }
 
@@ -160,5 +179,24 @@ table tbody tr:hover {
 }
 .red {
   color: red;
+}
+
+@media screen and (max-width: 800px) {
+  .market-cap {
+    display: none;
+  }
+  table td,
+  table th {
+    // text-align: left;
+    // height: 42px;
+    // padding: 0.2% 0%;
+    font-size: 12px;
+  }
+  table tbody tr td:nth-child(1) {
+    max-width: 100px;
+  }
+  table tbody tr td:nth-child(1) {
+    max-width: 100px;
+  }
 }
 </style>

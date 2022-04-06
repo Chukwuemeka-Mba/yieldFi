@@ -10,6 +10,6 @@ export default {}
 <style lang="scss">
 body {
   margin: 0px;
-  background-color: #f4f4f4;
+  background-color: #f7f7f7;
 }
 </style>

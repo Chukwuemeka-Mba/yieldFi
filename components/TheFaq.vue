@@ -55,6 +55,7 @@ export default {
   padding: 12px 40px;
   margin: 10px 20px;
   border-radius: 5px;
+  max-width: 900px;
   .row {
     @include flex-center();
     flex-direction: row;
@@ -94,22 +95,21 @@ export default {
 }
 
 @media screen and (max-width: 950px) {
-  .faq {
-    margin: 0px 0px;
-    width: 600px;
-    .drop {
-      width: 600px;
-      margin: 20px 20px;
-    }
+  .drop {
+    width: 700px;
+    margin: 20px 20px;
   }
 }
 @media screen and (max-width: 850px) {
-  .faq {
-    margin: 0px 20px;
-    .drop {
-      max-width: 500px;
-      margin: 20px 20px;
-    }
+  .drop {
+    max-width: 600px;
+    margin: 20px 20px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .drop {
+    max-width: 400px;
+    margin: 20px 20px;
   }
 }
 </style>

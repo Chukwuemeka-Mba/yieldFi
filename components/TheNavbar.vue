@@ -129,11 +129,11 @@ nav {
       }
       .signup {
         font-family: 'Poppins', sans-serif;
-        background: #010b12;
-        padding: 10px 15px;
+        background: #2a5ac2;
+        padding: 7px 15px;
         border-radius: 5px;
         font-weight: 400;
-        color: #9cff00 !important;
+        color: #fff !important;
         text-decoration: none;
       }
     }

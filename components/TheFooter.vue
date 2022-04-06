@@ -16,7 +16,7 @@
         <div class="card-body">
           <nuxt-link to=""> <p>About</p></nuxt-link>
           <nuxt-link to=""> <p>Careers</p></nuxt-link>
-          <nuxt-link to=""> <p>EBusiness</p></nuxt-link>
+          <nuxt-link to=""> <p>Business</p></nuxt-link>
           <nuxt-link to=""> <p>Contacts</p></nuxt-link>
           <nuxt-link to=""> <p>Community</p></nuxt-link>
           <nuxt-link to=""> <p>Blog</p></nuxt-link>
@@ -182,36 +182,41 @@ footer {
   height: 1fr;
   bottom: 0px;
   font-size: 14px;
+  background-color: #0a1e48;
 
   .section1 {
-    grid-area: s1;
-    margin: 3% 3%;
+    padding: 3% 3%;
     .logo {
       padding: 10px 4%;
     }
   }
   .section2 {
-    grid-area: s2;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-
-    .card-head {
-      h2 {
-        font-size: 18px;
+    .footer-card {
+      .card-head {
+        h2 {
+          font-size: 18px;
+          color: #fff;
+        }
       }
-    }
-    .card-body {
-      p {
-        font-size: 14px;
-        opacity: 0.3;
-        font-family: 'Poppins', sans-serif;
+      .card-body {
+        p {
+          font-size: 14px;
+          opacity: 0.3;
+          color: #fff;
+          font-family: 'Poppins', sans-serif;
+        }
+        p:hover {
+          color: #b8ccde;
+          opacity: 1;
+        }
       }
     }
   }
 
   .section3 {
-    grid-area: s3;
     .social {
       display: flex;
       flex-direction: row;
@@ -219,20 +224,46 @@ footer {
       gap: 30px;
       margin-top: 40px;
       .item {
+        a {
+          color: #fff;
+        }
         a:hover {
-          color: #2bc20e;
+          color: #2a5ac2;
         }
       }
     }
   }
   .section4 {
-    grid-area: s4;
     display: flex;
     justify-content: center;
     font-family: 'Poppins', sans-serif;
     margin-top: 40px;
     p {
       font-family: 'Poppins', sans-serif;
+      color: #fff;
+    }
+  }
+}
+@media screen and (min-width: 600px) and (max-width: 800px) {
+  footer {
+    .section2 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      grid-auto-rows: minmax(100px, auto);
+      margin-left: 40px;
+    }
+
+    .section3 {
+      .social {
+        justify-content: start;
+        margin-left: 40px;
+        font-family: 'Poppins', sans-serif;
+      }
+    }
+    .section4 {
+      justify-content: start;
+      margin-left: 40px;
     }
   }
 }

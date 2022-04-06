@@ -9,8 +9,9 @@
         <div class="info">
           <div class="info-head">
             <h1>
-              Buy, trade, and hold 600+ <br />cryptocurrencies on <br />
-              Yield Fi
+              Join 600+ Small <br />Businesses to trade with
+              <br />
+              crypto on Yield Fi
             </h1>
           </div>
           <div class="input">
@@ -18,7 +19,6 @@
             <input class="button" type="button" value="Get Started" />
           </div>
         </div>
-
         <!-- Cards  -->
         <div class="cards">
           <div class="card">
@@ -78,16 +78,23 @@
             <h1>Got additional questions?</h1>
             <p>We would love to have a chat with you</p>
           </div>
-          <router-link to="">
-            <button type="submit">Get Started</button>
-          </router-link>
+          <div class="button">
+            <router-link to="">
+              <button type="submit">
+                Get Started<font-awesome-icon
+                  style="margin-left: 10px"
+                  icon="angle-right"
+                />
+              </button>
+            </router-link>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- <section class="section4"></section> -->
-    <!-- <section class="section5">section5</section>
-    <section class="section6">section6</section>
+    <section class="section4"><TheAction /></section>
+    <!-- <section class="section5"><TheFooter /></section> -->
+    <!-- <section class="section6">section6</section>
     <section class="section7">section7</section> -->
   </main>
 </template>
@@ -95,7 +102,6 @@
 <script>
 export default {
   name: 'HomePage',
-
   head() {
     return {
       title: 'Yield.Fi | Crypto Transactions Made Easy',
@@ -135,12 +141,13 @@ main {
   font-family: 'Poppins', sans-serif;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 0.2fr 0.5fr 0.5fr 1fr;
+  grid-template-rows: 0.1fr 0.2fr 0.1fr 0.1fr 0.1fr;
   grid-template-areas:
     'nav'
     's1'
     's2'
-    's3';
+    's3'
+    's4';
 
   nav {
     grid-area: nav;
@@ -152,7 +159,6 @@ main {
       display: flex;
       flex-direction: row;
       justify-content: space-around;
-      margin-top: 150px;
       .cards {
         margin-top: 50px;
         display: grid;
@@ -180,10 +186,6 @@ main {
       display: flex;
       flex-direction: column;
       margin: 30px;
-      @media screen and (min-width: 800px) {
-        margin-top: 80px;
-        margin-left: 30px;
-      }
       .info-head {
         h1 {
           font-family: 'Poppins', sans-serif;
@@ -203,11 +205,11 @@ main {
         .button {
           height: 46px;
           font-family: 'Poppins', sans-serif;
-          background-color: #010b12;
+          background-color: #2a5ac2;
           border: 0px;
           border-radius: 5px;
           padding: 5px 30px;
-          color: #9cff00;
+          color: #fff;
         }
       }
     }
@@ -218,6 +220,7 @@ main {
       justify-content: space-between;
       flex-wrap: wrap;
       margin: 0px 10%;
+      margin-bottom: 30px;
       .stat {
         padding: 15px 30px;
         gap: 20px;
@@ -248,40 +251,44 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 150px 0px;
+    padding: 50px 0px;
     background-color: #fefefe;
   }
 
   .section3 {
     grid-area: s3;
-    margin-top: 150px;
+    background-color: #fff;
+    padding: 5rem 1.5rem;
     .faq {
       @include flex-center();
       flex-direction: column;
       text-align: center;
-      grid-area: faq;
-      background: #b2e3b637;
-      margin: 50px 75px;
+      background: #f5f7fc;
+      // margin: 0px 75px;
       border-radius: 25px;
 
       .text {
         margin-top: 100px;
-      }
-      .text {
         h1 {
           font-size: 38px;
         }
+        h1:hover {
+          color: #2a5ac2;
+        }
         p {
           font-size: 17px;
+          margin-top: 20px;
+          font-family: 'Poppins', sans-serif;
         }
       }
       .text2 {
         display: flex;
         align-items: center;
+        font-family: 'Poppins', sans-serif;
         flex-direction: column;
         margin-top: 30px;
         h1 {
-          @include zona-pro();
+          font-family: 'Poppins', sans-serif;
         }
         p {
           font-family: 'Poppins', sans-serif;
@@ -296,13 +303,34 @@ main {
         text-align: center;
         margin-top: 40px;
         margin-bottom: 150px;
-      }
-      .text2 h1 {
-        font-size: 22px;
-        font-weight: 900;
-        margin-bottom: 20px;
+        .text2 h1 {
+          font-size: 22px;
+          font-weight: 900;
+          margin-bottom: 20px;
+        }
+        .button {
+          display: flex;
+          flex-direction: row;
+          justify-content: start;
+          align-items: start;
+          button {
+            margin-left: 0px;
+          }
+        }
       }
     }
+  }
+
+  .section4 {
+    grid-area: s4;
+    padding: 5rem 1.5rem;
+    background-color: #fff;
+  }
+
+  .section5 {
+    grid-area: s5;
+    position: relative;
+    bottom: 0px;
   }
 }
 
@@ -310,6 +338,8 @@ main {
   main {
     .section1 {
       .top {
+        display: flex;
+        justify-content: start;
         .cards {
           display: none;
         }
@@ -320,13 +350,39 @@ main {
         }
       }
       .stats {
-        margin-top: 150px;
-        margin-bottom: 150px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        margin-top: 10px;
+        margin-left: 10px;
+        margin-bottom: 30px;
       }
     }
 
     .section3 {
-      margin-top: 150px;
+      background-color: #f5f7fc;
+      .faq {
+        display: flex;
+        align-items: start;
+        flex-direction: column;
+        text-align: left;
+        background-color: transparent;
+        margin: 0px;
+        .text {
+          margin-left: 50px;
+          margin-bottom: 30px;
+        }
+        .text2 {
+          display: flex;
+          align-items: start;
+          margin-top: 0px;
+        }
+        .action {
+          display: flex;
+          align-items: start;
+          text-align: left;
+          margin-left: 50px;
+        }
+      }
     }
   }
 }
