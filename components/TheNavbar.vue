@@ -23,8 +23,8 @@
           </div>
         </div>
 
-        <div class="hl1 nav-items" v-for="item in navItems">
-          <TheNavItem :item="item" :dropItems="item.dropItems" :key="item.id" />
+        <div class="hl1 nav-items" v-for="item in navItems" :key="item.id">
+          <TheNavItem :item="item" :dropItems="item.dropItems" />
         </div>
       </div>
     </div>
@@ -32,8 +32,8 @@
     <div class="ham-links">
       <div class="hl1 nav-links">
         <div class="hl1">
-          <nuxt-link class="login" to="">Login</nuxt-link>
-          <nuxt-link class="signup" to="">Register</nuxt-link>
+          <nuxt-link class="login" to="/TheLogin">Login</nuxt-link>
+          <nuxt-link class="signup" to="/TheRegister">Register</nuxt-link>
         </div>
         <div class="hl1 lang">
           <nuxt-link class="login" to="">Downloads</nuxt-link>
