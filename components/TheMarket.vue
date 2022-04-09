@@ -39,10 +39,15 @@
 
     <div class="action">
       <h1>Sign up now to create your business portfolio for free!</h1>
-      <button type="submit">
-        Get Started
-        <font-awesome-icon style="margin-left: 10px" icon="angle-right" />
-      </button>
+
+      <a href="/TheRegister" target="_blank"
+        ><button type="submit">
+          Get Started
+          <font-awesome-icon
+            style="margin-left: 10px"
+            icon="angle-right"
+          /></button
+      ></a>
     </div>
   </div>
 </template>

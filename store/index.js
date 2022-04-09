@@ -3,6 +3,7 @@ export const state = {
     {
       id: '1',
       name: 'Buy Crypto',
+      link: '',
       dropItems: [
         {
           id: 1,
@@ -39,6 +40,7 @@ export const state = {
     {
       id: '3',
       name: 'Trade',
+      link: '',
       dropItems: [
         {
           id: 1,
@@ -93,6 +95,7 @@ export const state = {
     {
       id: '4',
       name: 'Derivatives',
+      link: '',
       dropItems: [
         {
           id: 1,
@@ -151,6 +154,7 @@ export const state = {
     {
       id: '5',
       name: 'Earn',
+      link: '',
       dropItems: [
         {
           id: 1,
@@ -211,6 +215,7 @@ export const state = {
     {
       id: '6',
       name: 'Finance',
+      link: '',
       dropItems: [
         {
           id: 1,
@@ -235,6 +240,7 @@ export const state = {
     {
       id: '7',
       name: 'NFT',
+      link: '',
       dropItems: false,
     },
   ],

@@ -7,6 +7,16 @@
       <ThePriceCard />
     </section>
     <section>
+      <div class="price-text">
+        <h1>
+          Our pricing gives you full access to our suite of Crypto products
+        </h1>
+        <p>
+          Yield Finance does not only help you to accept payments, we are here
+          to open your business up to the world and get payout in your local
+          currency.
+        </p>
+      </div>
       <div class="table-container">
         <table>
           <thead>
@@ -66,7 +76,23 @@ export default {}
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 5rem 0rem;
+    padding: 3rem 0rem;
+  }
+
+  .price-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 2rem 2rem;
+    h1 {
+      font-size: 34px;
+      font-weight: 900;
+    }
+    p {
+      font-size: 16px;
+      max-width: 550px;
+    }
   }
 
   .table-container {

@@ -3,11 +3,15 @@
     <div class="logo-links">
       <div class="hl1">
         <div class="hl1">
-          <img src="../assets/img/yield-dark.png" alt="" width="110" />
+          <nuxt-link to="/">
+            <img src="../assets/img/yield-dark.png" alt="" width="110"
+          /></nuxt-link>
         </div>
 
         <div class="hl1 nav-items" v-for="item in navItems" :key="item.id">
-          <TheNavItem :item="item" :dropItems="item.dropItems" />
+          <nuxt-link :to="`/${item.link}`">
+            <TheNavItem :item="item" :dropItems="item.dropItems"
+          /></nuxt-link>
         </div>
       </div>
     </div>
@@ -57,9 +61,11 @@ nav {
       font-size: 14px;
       a {
         font-family: 'Poppins', sans-serif;
+        margin-right: 5px;
+        transition: text-decoration 0.5s;
       }
       a:hover {
-        text-decoration: underline #39ff13;
+        text-decoration: 2px underline #2a5ac2;
         font-family: 'Poppins', sans-serif;
       }
       img {
