@@ -17,7 +17,11 @@
       </div>
     </div>
     <div class="drop-list">
-      <div :class="{ hidden: setHidden }" v-for="listItem in dropList">
+      <div
+        :class="{ hidden: setHidden }"
+        v-for="listItem in dropList"
+        :key="listItem.id"
+      >
         <TheDropdown :listItem="listItem" :key="listItem.id" />
       </div>
     </div>
@@ -59,7 +63,7 @@ export default {
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
 .drop {
-  background-color: #f7f7f7;
+  background-color: #fff;
   .row {
     display: flex;
     flex-direction: row;
@@ -86,7 +90,6 @@ export default {
 }
 .hidden {
   display: none;
-  font-size: 50px;
 }
 .hover:hover {
   color: #265a91;

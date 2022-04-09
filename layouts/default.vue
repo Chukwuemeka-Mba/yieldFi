@@ -1,7 +1,7 @@
 <template lang="">
   <div>
     <Nuxt />
-    <TheFooter />
+    <!-- <TheFooter /> -->
   </div>
 </template>
 <script>
@@ -10,6 +10,6 @@ export default {}
 <style lang="scss">
 body {
   margin: 0px;
-  background-color: #f7f7f7;
+  background-color: #fff;
 }
 </style>

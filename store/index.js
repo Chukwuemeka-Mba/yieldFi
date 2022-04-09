@@ -32,8 +32,9 @@ export const state = {
     },
     {
       id: '2',
-      name: 'Markets',
+      name: 'Pricing',
       dropItems: false,
+      link: 'ThePricing',
     },
     {
       id: '3',

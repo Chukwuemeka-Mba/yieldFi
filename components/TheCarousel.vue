@@ -163,9 +163,37 @@ export default {
   }
 
   @media screen and (max-width: 800px) {
+    .header {
+      p {
+        font-size: 14px;
+      }
+      h1 {
+        font-size: 36px;
+        width: 500px;
+      }
+    }
+
     .body {
       display: flex;
       flex-direction: column;
+      max-width: 500px;
+      .text-container {
+        padding-right: 0px;
+        max-width: 450px;
+        .text {
+          h2 {
+            font-size: 20px;
+            font-weight: 900;
+          }
+          p {
+            font-size: 14px;
+          }
+        }
+      }
+      .img-container {
+        margin-right: 0%;
+        padding: 20px 0px;
+      }
     }
   }
 }

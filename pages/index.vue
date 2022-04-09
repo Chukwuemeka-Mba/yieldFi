@@ -16,7 +16,9 @@
           </div>
           <div class="input">
             <input class="form" type="text" placeholder="Email/Phone Number" />
-            <input class="button" type="button" value="Get Started" />
+            <nuxt-link to="/TheRegister">
+              <input class="button" type="button" value="Get Started"
+            /></nuxt-link>
           </div>
         </div>
         <!-- Cards  -->
@@ -94,8 +96,7 @@
     </section>
 
     <section class="section5"><TheAction /></section>
-    <!-- <section class="section6">section6</section>
-    <section class="section7">section7</section> -->
+    <section class="section6"><TheFooter /></section>
   </main>
 </template>
 
@@ -143,14 +144,15 @@ main {
   font-family: 'Poppins', sans-serif;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 0.1fr 0.2fr 0.1fr 0.1fr 0.1fr;
+  // grid-template-rows: 0.9fr 0.2fr 0.1fr 0.1fr 0.4fr 0.9fr;
   grid-template-areas:
     'nav'
     's1'
     's2'
     's3'
     's4'
-    's5';
+    's5'
+    's6';
 
   nav {
     grid-area: nav;
@@ -162,6 +164,7 @@ main {
       display: flex;
       flex-direction: row;
       justify-content: space-around;
+      align-items: center;
       .cards {
         margin-top: 50px;
         display: grid;
@@ -199,7 +202,7 @@ main {
         }
       }
       .input {
-        margin-top: 10px;
+        margin-top: 40px;
         font-family: 'Poppins', sans-serif;
         .form {
           height: 40px;
@@ -274,7 +277,7 @@ main {
       flex-direction: column;
       text-align: center;
       background: #f5f7fc;
-      // margin: 0px 75px;
+      margin: 0px 3rem;
       border-radius: 25px;
 
       .text {
@@ -336,6 +339,9 @@ main {
     padding: 5rem 1.5rem;
     background-color: #fff;
   }
+  .section6 {
+    grid-area: s6;
+  }
 }
 
 @media screen and (max-width: 950px) {
@@ -347,18 +353,27 @@ main {
         .cards {
           display: none;
         }
-      }
-      .info {
-        .input {
-          margin-top: 10px;
+        .info {
+          margin-top: 70px;
+          .input {
+            margin-top: 30px;
+          }
         }
       }
+
       .stats {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
+        width: 70%;
         margin-top: 10px;
         margin-left: 10px;
         margin-bottom: 30px;
+        .stat {
+          width: 50%;
+          h1 {
+            font-size: 30px;
+          }
+        }
       }
     }
 
@@ -385,6 +400,22 @@ main {
           align-items: start;
           text-align: left;
           margin-left: 50px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 850px) {
+  main {
+    .section1 {
+      .stats {
+      }
+    }
+    .section4 {
+      .faq {
+        .text {
+          max-width: 450px;
         }
       }
     }

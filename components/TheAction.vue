@@ -9,7 +9,7 @@
         </p>
       </div>
       <div class="button">
-        <TheButton />
+        <nuxt-link to="/ThePricing"> <TheButton /></nuxt-link>
       </div>
     </div>
     <div class="cards">
@@ -23,10 +23,12 @@
           </p>
         </div>
         <div class="button">
-          <button type="submit">
-            Get Started
-            <font-awesome-icon style="margin-left: 10px" icon="arrow-right" />
-          </button>
+          <nuxt-link to="/ThePricing">
+            <button type="submit">
+              Get Started
+              <font-awesome-icon style="margin-left: 10px" icon="arrow-right" />
+            </button>
+          </nuxt-link>
         </div>
       </div>
       <div class="card dev">
@@ -38,10 +40,14 @@
           </p>
         </div>
         <div class="button">
-          <button type="submit">
-            View Documentation
-            <font-awesome-icon style="margin-left: 10px" icon="arrow-right" />
-          </button>
+          <nuxt-link to="/ThePricing">
+            <button type="submit">
+              View Documentation
+              <font-awesome-icon
+                style="margin-left: 10px"
+                icon="arrow-right"
+              /></button
+          ></nuxt-link>
         </div>
       </div>
     </div>
@@ -113,7 +119,7 @@ section {
   }
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1000px) {
   section {
     display: flex;
     flex-direction: column;

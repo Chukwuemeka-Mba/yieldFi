@@ -2,7 +2,7 @@
   <div class="register">
     <section class="slider"></section>
 
-    <section class="">
+    <section class="form-container">
       <div class="img">
         <nuxt-link to="/">
           <img src="../assets/img/yield-dark.png" alt="" width="150"
@@ -68,16 +68,16 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-.register {
+.form-container {
   height: 150vh;
   font-family: 'Poppins', 'sans-serif';
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  // justify-content: center;
   align-items: center;
   .img {
     text-align: center;
-    margin: 1rem;
+    margin: 2rem 1rem;
   }
   .form {
     display: flex;
@@ -87,7 +87,7 @@ export default {
     background: #fff;
     width: 100%;
     max-width: 500px;
-    padding: 3rem 2.5rem;
+    padding: 1rem 2.5rem;
     --tw-border-opacity: 1;
     border-color: rgba(252, 252, 252, var(--tw-border-opacity));
     .title {
@@ -99,6 +99,7 @@ export default {
       }
       p {
         font-family: 'Poppins', 'sans-serif';
+        max-width: 420px;
       }
     }
     form {

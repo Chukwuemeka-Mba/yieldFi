@@ -1,5 +1,5 @@
 <template lang="">
-  <div class="register">
+  <div class="login">
     <section class="slider"></section>
 
     <section class="">
@@ -40,7 +40,7 @@
 export default {}
 </script>
 <style lang="scss" scoped>
-.register {
+.login {
   height: 100vh;
   font-family: 'Poppins', 'sans-serif';
   display: flex;
@@ -57,11 +57,8 @@ export default {}
     justify-content: center;
     align-items: center;
     background: #fff;
-    width: 100%;
-    // max-width: 500px;
     padding: 3rem 2.5rem;
-    --tw-border-opacity: 1;
-    border-color: rgba(252, 252, 252, var(--tw-border-opacity));
+    border-radius: 7px;
     .title {
       text-align: center;
       h1 {

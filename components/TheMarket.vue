@@ -69,7 +69,7 @@ export default {
   },
 }
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
 @mixin fr {
@@ -131,7 +131,8 @@ export default {
 .table {
   padding: 20px 10px;
   font-family: 'Poppins', sans-serif;
-  min-width: 900px;
+  min-width: 1000px;
+  overflow-x: scroll;
 }
 table {
   font-family: 'Poppins', sans-serif;
@@ -187,16 +188,22 @@ table tbody tr:hover {
   }
   table td,
   table th {
-    // text-align: left;
-    // height: 42px;
-    // padding: 0.2% 0%;
     font-size: 12px;
   }
+  .table {
+    padding: 20px 0px;
+    min-width: 750px;
+  }
   table tbody tr td:nth-child(1) {
-    max-width: 100px;
+    max-width: 60px;
   }
   table tbody tr td:nth-child(1) {
     max-width: 100px;
+  }
+  .action {
+    h1 {
+      max-width: 500px;
+    }
   }
 }
 </style>
