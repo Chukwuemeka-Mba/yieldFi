@@ -46,15 +46,15 @@
             </div>
             <div>
               <div class="input-radio">
-                <input type="radio" @click="setCard" name="card" />
+                <input type="radio" @click="setPayIndex(1)" name="card" />
                 <label for="card">Credit Card or Debit Card</label>
               </div>
               <div class="input-radio">
-                <input @click="setSquare" type="radio" name="card" />
+                <input  @click="setPayIndex(2)"  type="radio" name="card" />
                 <label for="card">Square </label>
               </div>
               <div class="input-radio">
-                <input @click="setFlutter()" type="radio" name="card" />
+                <input  @click="setPayIndex(3)"  type="radio" name="card" />
                 <label for="card">Flutterwave-Africa</label>
               </div>
             </div>
@@ -64,7 +64,7 @@
                 <font-awesome-icon icon="lock" />
               </div>
               <div class="form">
-                <form novalidate>
+                <form v-if="payIndex == 1">
                   <input
                     type="text"
                     name="card num"
@@ -83,14 +83,18 @@
                     placeholder="Security Code"
                     required
                   />
+                  <button>
+                        Pay With Card
+                      </button>
+                  </form>
                   <div class="comp">
-                    <div v-if="isSquare" class="square">
+                    <div v-if="payIndex == 2" class="square">
                       <button>
                         Pay With Square
                         <span><img src="@/assets/img/square.png" /></span>
                       </button>
                     </div>
-                    <div v-if="isFlutter == false" class="flutter">
+                    <div v-if="payIndex == 3" class="flutter">
                       <button @click="payViaService">
                         Pay With Flutterwave
                         <span><img src="@/assets/img/flutterwave.png" /></span>
@@ -114,8 +118,7 @@
 export default {
   data() {
     return {
-      isSquare: true,
-      isFlutter: false,
+      payIndex: '',
       paymentData: {
         tx_ref: this.generateReference(),
         amount: 49.99,
@@ -157,8 +160,8 @@ export default {
       return date.getTime().toString()
     },
     // Radio Input Methods
-    setFlutter() {
-      this.isFlutter = !this.isFlutter
+    setPayIndex(num) {
+      this.payIndex = num
     },
   },
 }
@@ -265,6 +268,8 @@ export default {
           button {
             background: linear-gradient(135deg, #0a1e48 0%, #2a5ac2 100%);
           }
+        }
+
           .comp {
             display: flex;
             flex-direction: column;
@@ -309,7 +314,6 @@ export default {
               }
             }
           }
-        }
       }
     }
   }
