@@ -46,12 +46,16 @@
             </div>
             <div>
               <div class="input-radio">
-                <input type="radio" name="card" />
+                <input type="radio" @click="setCard" name="card" />
                 <label for="card">Credit Card or Debit Card</label>
               </div>
               <div class="input-radio">
-                <input type="radio" name="card" />
-                <label for="card">Paypal</label>
+                <input @click="setSquare" type="radio" name="card" />
+                <label for="card">Square </label>
+              </div>
+              <div class="input-radio">
+                <input @click="setFlutter()" type="radio" name="card" />
+                <label for="card">Flutterwave-Africa</label>
               </div>
             </div>
             <div class="card-form">
@@ -79,10 +83,20 @@
                     placeholder="Security Code"
                     required
                   />
-
-                  <nuxt-link to="/">
-                    <button>Confirm Payment</button></nuxt-link
-                  >
+                  <div class="comp">
+                    <div v-if="isSquare" class="square">
+                      <button>
+                        Pay With Square
+                        <span><img src="@/assets/img/square.png" /></span>
+                      </button>
+                    </div>
+                    <div v-if="isFlutter == false" class="flutter">
+                      <button @click="payViaService">
+                        Pay With Flutterwave
+                        <span><img src="@/assets/img/flutterwave.png" /></span>
+                      </button>
+                    </div>
+                  </div>
                 </form>
               </div>
             </div>
@@ -97,7 +111,57 @@
   </div>
 </template>
 <script>
-export default {}
+export default {
+  data() {
+    return {
+      isSquare: true,
+      isFlutter: false,
+      paymentData: {
+        tx_ref: this.generateReference(),
+        amount: 49.99,
+        public_key: 'FLWPUBK_TEST-02c0a349a358c8d03b48a3582dcf1a0d-X',
+        currency: 'USD',
+        payment_options: 'card,ussd',
+        redirect_url: '',
+        meta: {
+          counsumer_id: '7898',
+          consumer_mac: 'kjs9s8ss7dd',
+        },
+        customer: {
+          name: 'Demo Customer  Name',
+          email: 'customer@mail.com',
+          phone_number: '081845***044',
+        },
+        customizations: {
+          title: 'Customization Title',
+          description: 'Customization Description',
+          logo: 'https://flutterwave.com/images/logo-colored.svg',
+        },
+        callback: this.makePaymentCallback,
+        onclose: this.closedPaymentModal,
+      },
+    }
+  },
+  methods: {
+    payViaService() {
+      this.payWithFlutterwave(this.paymentData)
+    },
+    makePaymentCallback(response) {
+      console.log('Pay', response)
+    },
+    closedPaymentModal() {
+      console.log('payment is closed')
+    },
+    generateReference() {
+      const date = new Date()
+      return date.getTime().toString()
+    },
+    // Radio Input Methods
+    setFlutter() {
+      this.isFlutter = !this.isFlutter
+    },
+  },
+}
 </script>
 <style lang="scss" scoped>
 .checkout {
@@ -195,17 +259,55 @@ export default {}
             height: 40px;
             width: 89%;
             margin: 0.85rem;
-            border-radius: 0.2rem;
             font-family: 'Poppins' sans-serif;
           }
-          input:focus {
-            border: 1px solid #000;
-          }
-          input:invalid {
-            border: 1px solid red;
-          }
+
           button {
             background: linear-gradient(135deg, #0a1e48 0%, #2a5ac2 100%);
+          }
+          .comp {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            .flutter {
+              button {
+                display: flex;
+                gap: 10px;
+                cursor: pointer;
+                color: orange;
+                align-items: center;
+                border: 1px solid orange;
+                background: linear-gradient(
+                  135deg,
+                  #ffffff 2%,
+                  #ffffff 0%,
+                  #ffffff 40%
+                );
+                img {
+                  width: 30px;
+                }
+              }
+            }
+            .square {
+              button {
+                display: flex;
+                gap: 10px;
+                cursor: pointer;
+                color: #000000;
+                align-items: center;
+                border: 1px solid #000000;
+                background: linear-gradient(
+                  135deg,
+                  #ffffff 2%,
+                  #ffffff 0%,
+                  #ffffff 40%
+                );
+                img {
+                  width: 30px;
+                }
+              }
+            }
           }
         }
       }

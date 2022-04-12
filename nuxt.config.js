@@ -18,7 +18,10 @@ export default {
   css: ['~/assets/styles/index.css', '~/assets/styles/index.scss'],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [{ src: '~/plugins/vue-tel-input.js', mode: 'client' }],
+  plugins: [
+    { src: '~/plugins/vue-tel-input.js', mode: 'client' },
+    { src: '~/plugins/flutterwave.js' },
+  ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
