@@ -74,13 +74,13 @@
                   <input
                     type="text"
                     name="expiry date"
-                    placeholder="Expiry Date"
+                    placeholder="Expiry Date: MM / YY"
                     required
                   />
                   <input
                     type="number"
                     name="sec code"
-                    placeholder="Security Code"
+                    placeholder="Security Code: XXX"
                     required
                   />
                   <button>

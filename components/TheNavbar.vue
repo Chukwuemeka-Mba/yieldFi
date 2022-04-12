@@ -3,6 +3,9 @@
     <div class="logo-links">
       <div class="hl1">
         <div class="hl1">
+          <div class="rotate" @click="showSidebar">
+            <font-awesome-icon icon="bars" />
+          </div>
           <nuxt-link to="/">
             <img src="../assets/img/yield-dark.png" alt="" width="110"
           /></nuxt-link>
@@ -24,6 +27,9 @@
         </div>
       </div>
     </div>
+    <div class="sidebar" v-if="sidebar">
+      <TheSidebar />
+    </div>
   </nav>
 </template>
 <script>
@@ -32,8 +38,14 @@ export default {
   data() {
     return {
       dropDown: false,
+      sidebar: false,
       navItems: this.$store.state.navItems,
     }
+  },
+  methods: {
+    showSidebar() {
+      this.sidebar = !this.sidebar
+    },
   },
 }
 </script>
@@ -51,7 +63,7 @@ nav {
   .logo-links {
     display: flex;
     align-items: center;
-    margin-right: 30px;
+    margin-right: 0px;
     .hl1 {
       font-family: 'Poppins', sans-serif;
       display: flex;
@@ -92,7 +104,7 @@ nav {
       font-size: 14px;
       a {
         font-family: 'Poppins', sans-serif;
-        margin-right: 20px;
+        margin-right: 10px;
       }
       a:hover {
         text-decoration: none;
@@ -109,9 +121,30 @@ nav {
     }
   }
 
+  .rotate {
+    svg {
+      height: 25px;
+      color: #2a5ac2;
+    }
+    svg:hover {
+      transition: 0.9s;
+      transform: rotate(360deg);
+      -webkit-transform: rotate(360deg);
+      -ms-transform: rotate(360deg);
+    }
+  }
+  .sidebar {
+    display: none;
+  }
   @media screen and (max-width: 1000px) {
     .nav-items {
       display: none !important;
+    }
+    .sidebar {
+      display: block;
+      position: absolute;
+      left: 0px;
+      top: 69px;
     }
   }
 }
