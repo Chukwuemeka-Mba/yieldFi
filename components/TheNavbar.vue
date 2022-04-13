@@ -122,6 +122,7 @@ nav {
   }
 
   .rotate {
+    display: none;
     svg {
       height: 25px;
       color: #2a5ac2;
@@ -139,6 +140,13 @@ nav {
   @media screen and (max-width: 1000px) {
     .nav-items {
       display: none !important;
+    }
+    .rotate {
+      display: block;
+      svg {
+        height: 25px;
+        color: #2a5ac2;
+      }
     }
     .sidebar {
       display: block;
