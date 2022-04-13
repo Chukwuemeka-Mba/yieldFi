@@ -11,6 +11,12 @@ export default {
       { hid: 'description', name: 'description', content: '' },
       { name: 'format-detection', content: 'telephone=no' },
     ],
+    script: [
+      {
+        type: 'module',
+        src: 'https://web.squarecdn.com/v1/square.js',
+      },
+    ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
 
@@ -18,10 +24,7 @@ export default {
   css: ['~/assets/styles/index.css', '~/assets/styles/index.scss'],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [
-    { src: '~/plugins/vue-tel-input.js', mode: 'client' },
-    { src: '~/plugins/flutterwave.js' },
-  ],
+  plugins: [{ src: '~/plugins/flutterwave.js' }],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,

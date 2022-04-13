@@ -55,7 +55,7 @@
               </div>
               <div class="input-radio">
                 <input  @click="setPayIndex(3)"  type="radio" name="card" />
-                <label for="card">Flutterwave-Africa</label>
+                <label for="card">Flutterwave - Africa</label>
               </div>
             </div>
             <div class="card-form">
@@ -89,7 +89,8 @@
                   </form>
                   <div class="comp">
                     <div v-if="payIndex == 2" class="square">
-                      <button>
+                      <div id="card-container"></div>
+                      <button @click="initializeCard(card)">
                         Pay With Square
                         <span><img src="@/assets/img/square.png" /></span>
                       </button>
@@ -119,6 +120,7 @@ export default {
   data() {
     return {
       payIndex: '',
+      // Flutterwave Integration
       paymentData: {
         tx_ref: this.generateReference(),
         amount: 49.99,
@@ -131,21 +133,37 @@ export default {
           consumer_mac: 'kjs9s8ss7dd',
         },
         customer: {
-          name: 'Demo Customer  Name',
-          email: 'customer@mail.com',
+          name: 'Favour Felix',
+          email: 'favour@acumen.digital',
           phone_number: '081845***044',
         },
         customizations: {
-          title: 'Customization Title',
-          description: 'Customization Description',
+          title: 'Yield Crypto Trasfer',
+          description: 'Africa (Lagos)',
           logo: 'https://flutterwave.com/images/logo-colored.svg',
         },
         callback: this.makePaymentCallback,
         onclose: this.closedPaymentModal,
       },
+      // Square Sdk Integration
+      card: null,
+      appId : 'sq0idp--aEjJre6mcOtD0A6MrryAw',
+      locationId : 'LHK8V3B5FDWA8',
+
     }
   },
+  mounted: async function() {
+    const payments = Square.payments('sq0idp--aEjJre6mcOtD0A6MrryAw', 'LHK8V3B5FDWA8');
+    const card = await payments.card();
+    // await card.attach('#card-container');
+    this.card = card
+    },
   methods: {
+    // Radio Input Methods
+    setPayIndex(num) {
+      this.payIndex = num
+    },
+    // Flutterwave Methods
     payViaService() {
       this.payWithFlutterwave(this.paymentData)
     },
@@ -159,10 +177,53 @@ export default {
       const date = new Date()
       return date.getTime().toString()
     },
-    // Radio Input Methods
-    setPayIndex(num) {
-      this.payIndex = num
-    },
+    // Square Methods
+   async initializeCard(payments) {
+        const card = await payments.card();
+        await card.attach('#card-container');
+
+        return card;
+      },async function () {
+  if (!window.Square) {
+    throw new Error('Square.js failed to load properly');
+  }
+
+  const payments = window.Square.payments(appId, locationId);
+  let card;
+  try {
+    card = await initializeCard(payments);
+  } catch (e) {
+    console.error('Initializing Card failed', e);
+    return;
+  }
+
+  // Checkpoint 2.
+  async function handlePaymentMethodSubmission(event, paymentMethod) {
+    event.preventDefault();
+
+    try {
+      // disable the submit button as we await tokenization and make a
+      // payment request.
+      cardButton.disabled = true;
+      const token = await tokenize(paymentMethod);
+      const paymentResults = await createPayment(token);
+      displayPaymentResults('SUCCESS');
+
+      console.debug('Payment Success', paymentResults);
+    } catch (e) {
+      cardButton.disabled = false;
+      displayPaymentResults('FAILURE');
+      console.error(e.message);
+    }
+  }
+
+  const cardButton = document.getElementById(
+    'card-button'
+  );
+  cardButton.addEventListener('click', async function (event) {
+    await handlePaymentMethodSubmission(event, card);
+  });
+}
   },
 }
 </script>
@@ -230,6 +291,7 @@ export default {
   }
 
   .form-container {
+    margin: 7rem 0rem;
     .form-main {
       margin: 32px auto;
       width: 458px;

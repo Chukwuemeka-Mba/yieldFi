@@ -1,4 +1,4 @@
-export const state = {
+export const state = () => ({
   navItems: [
     {
       id: '1',
@@ -290,4 +290,6 @@ export const state = {
         'Tax is not included in the prices listed on the pricing page. Tax will be included in your billing receipts.',
     },
   ],
-}
+})
+
+export const mutations = {}

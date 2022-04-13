@@ -126,12 +126,12 @@ nav {
       height: 25px;
       color: #2a5ac2;
     }
-    svg:hover {
-      transition: 0.9s;
-      transform: rotate(360deg);
-      -webkit-transform: rotate(360deg);
-      -ms-transform: rotate(360deg);
-    }
+    // svg:hover {
+    //   transition: 0.9s;
+    //   transform: rotate(360deg);
+    //   -webkit-transform: rotate(360deg);
+    //   -ms-transform: rotate(360deg);
+    // }
   }
   .sidebar {
     display: none;
