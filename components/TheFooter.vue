@@ -182,12 +182,12 @@ footer {
   height: 1fr;
   bottom: 0px;
   font-size: 14px;
-  background-color: #0a1e48;
+  background-color: #fff;
+  border-top: 1px solid rgb(237, 237, 255);
 
   .section1 {
-    padding: 3% 3%;
     .logo {
-      padding: 10px 4%;
+      padding: 3rem 7%;
     }
   }
   .section2 {
@@ -198,18 +198,19 @@ footer {
       .card-head {
         h2 {
           font-size: 18px;
-          color: #fff;
+          color: blue;
         }
       }
       .card-body {
         p {
           font-size: 14px;
           opacity: 0.3;
-          color: #fff;
+          color: #000;
           font-family: 'Poppins', sans-serif;
         }
         p:hover {
-          color: #b8ccde;
+          color: rgb(0, 76, 255);
+          opacity: 0.6;
           opacity: 1;
         }
       }
@@ -225,10 +226,11 @@ footer {
       margin-top: 40px;
       .item {
         a {
-          color: #fff;
+          color: #000;
         }
         a:hover {
-          color: #2a5ac2;
+          color: blue;
+          opacity: 1;
         }
       }
     }
@@ -240,12 +242,17 @@ footer {
     margin-top: 40px;
     p {
       font-family: 'Poppins', sans-serif;
-      color: #fff;
+      color: blue;
     }
   }
 }
 @media screen and (min-width: 600px) and (max-width: 800px) {
   footer {
+    .section1 {
+      .logo {
+        padding: 3rem 2rem;
+      }
+    }
     .section2 {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -272,7 +279,7 @@ footer {
   footer {
     .section1 {
       .logo {
-        padding-left: 25px;
+        padding: 3rem 0rem;
       }
     }
     .section2 {

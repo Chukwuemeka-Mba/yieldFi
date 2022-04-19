@@ -7,7 +7,7 @@
             <font-awesome-icon icon="bars" />
           </div>
           <nuxt-link to="/">
-            <img src="../assets/img/yield-dark.png" alt="" width="110"
+            <img src="../assets/img/yield-light.png" alt="" width="110"
           /></nuxt-link>
         </div>
 
@@ -76,14 +76,13 @@ nav {
         margin-right: 5px;
         transition: text-decoration 0.5s;
       }
-      a:hover {
-        text-decoration: 2px underline #2a5ac2;
-        font-family: 'Poppins', sans-serif;
-      }
       img {
         margin: 5px 15px;
         margin-right: 30px;
       }
+    }
+    .nav-items {
+      margin-bottom: 10px;
     }
   }
   .nav-logo {
@@ -100,7 +99,7 @@ nav {
       display: flex;
       flex-direction: row;
       align-items: center;
-      gap: 10px;
+      gap: 20px;
       font-size: 14px;
       a {
         font-family: 'Poppins', sans-serif;
@@ -111,7 +110,7 @@ nav {
       }
       .signup {
         font-family: 'Poppins', sans-serif;
-        background: #2a5ac2;
+        background: blue;
         padding: 7px 15px;
         border-radius: 5px;
         font-weight: 400;
@@ -125,14 +124,8 @@ nav {
     display: none;
     svg {
       height: 25px;
-      color: #2a5ac2;
+      color: blue;
     }
-    // svg:hover {
-    //   transition: 0.9s;
-    //   transform: rotate(360deg);
-    //   -webkit-transform: rotate(360deg);
-    //   -ms-transform: rotate(360deg);
-    // }
   }
   .sidebar {
     display: none;
@@ -145,7 +138,7 @@ nav {
       display: block;
       svg {
         height: 25px;
-        color: #2a5ac2;
+        color: blue2;
       }
     }
     .sidebar {

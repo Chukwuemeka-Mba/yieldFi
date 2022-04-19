@@ -9,10 +9,13 @@
         <div class="info">
           <div class="info-head">
             <h1>
-              <span style="font-size: 48px">Join 600+ </span>
-              <span style="font-size: 30px">Small Businesses to</span><br />
-              Earn in crypto on YieldFi
+              Small business <span style="color: blue">made easy</span> with
+              crypto.
             </h1>
+            <p>
+              Yield Fi is the No. 1 payments app for small businesses. Auto-pay
+              in stocks and cryptocurrencies. Start with as little as $1.
+            </p>
           </div>
           <div class="input">
             <input class="form" type="text" placeholder="Email/Phone Number" />
@@ -22,21 +25,9 @@
           </div>
         </div>
         <!-- Cards  -->
-        <div class="cards">
-          <div class="card">
-            <img src="../assets/img/nft.png" alt="" width="150" />
-            <p>Yield NFTs</p>
-          </div>
-          <div class="card">
-            <img src="../assets/img/coin-img-2.png" alt="" width="150" />
-            <p>Yield Marketplace</p>
-          </div>
-          <div class="card">
-            <img src="../assets/img/coin-img-3.png" alt="" width="150" />
-            <p>Yield Cash</p>
-          </div>
-          <div class="cards"></div>
-        </div>
+        <!-- <div class="cards">
+
+        </div> -->
       </div>
 
       <!-- Bottom Section -->
@@ -127,8 +118,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@500&family=Poppins:wght@300&display=swap');
 //* Mixins
 @mixin flex-center {
   display: flex;
@@ -137,14 +127,10 @@ export default {
 @mixin google-sans {
   font-family: 'Poppins', sans-serif;
 }
-@mixin zona-pro {
-  font-family: 'Poppins', sans-serif;
-}
 main {
   font-family: 'Poppins', sans-serif;
   display: grid;
   grid-template-columns: 1fr;
-  // grid-template-rows: 0.9fr 0.2fr 0.1fr 0.1fr 0.4fr 0.9fr;
   grid-template-areas:
     'nav'
     's1'
@@ -159,46 +145,24 @@ main {
   }
   .section1 {
     grid-area: s1;
-
+    padding: 0rem 3rem;
     .top {
       display: flex;
       flex-direction: row;
       justify-content: space-around;
       align-items: center;
-      .cards {
-        margin-top: 50px;
-        display: grid;
-        align-items: center;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 5px;
-        grid-auto-rows: minmax(10px, auto);
-        .card {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          border-radius: 5px;
-          max-width: 170px;
-          padding: 20px;
-          box-shadow: 0px 5px 9px 2px rgba(69, 104, 209, 0.06);
-          p {
-            font-family: 'Poppins', sans-serif;
-            font-size: 14px;
-          }
-        }
-        .card:hover {
-          opacity: 0.6;
-        }
-      }
     }
 
     .info {
       display: flex;
       flex-direction: column;
-      margin: 30px;
+      max-width: 600px;
+      margin-bottom: 1rem;
       .info-head {
         h1 {
-          font-family: 'Poppins', sans-serif;
-          font-size: 48px;
+          font-family: 'DM Mono', monospace;
+          font-size: 65px;
+          line-height: 70px;
         }
       }
       .input {
@@ -214,7 +178,7 @@ main {
         .button {
           height: 46px;
           font-family: 'Poppins', sans-serif;
-          background-color: #2a5ac2;
+          background-color: blue;
           border: 0px;
           border-radius: 5px;
           padding: 5px 30px;
@@ -226,16 +190,19 @@ main {
     .stats {
       display: flex;
       flex-direction: row;
-      justify-content: space-between;
       flex-wrap: wrap;
-      margin: 0px 10%;
+      margin: 0px 2.3rem;
       margin-bottom: 30px;
+      gap: 3rem;
       .stat {
         padding: 15px 30px;
-        gap: 20px;
         width: 200px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
         h1 {
-          font-family: 'Poppins', sans-serif;
+          font-family: 'DM Mono', monospace;
           font-weight: 600;
           font-size: 40px;
           line-height: 48px;
@@ -262,21 +229,22 @@ main {
     align-items: center;
     padding: 50px 0px;
     background-color: #fefefe;
+    padding: 5rem 4rem;
   }
   .section3 {
     grid-area: s3;
-    padding: 5rem 1.5rem;
+    padding: 5rem 5.5rem;
     background-color: #fff;
   }
   .section4 {
     grid-area: s4;
     background-color: #fff;
-    padding: 5rem 1.5rem;
+    padding: 5rem 2.5rem;
     .faq {
       @include flex-center();
       flex-direction: column;
       text-align: center;
-      background: #f5f7fc;
+      background: #e0efff;
       margin: 0px 3rem;
       border-radius: 25px;
 

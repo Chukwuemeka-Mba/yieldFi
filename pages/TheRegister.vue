@@ -5,7 +5,7 @@
     <section class="form-container">
       <div class="img">
         <nuxt-link to="/">
-          <img src="../assets/img/yield-dark.png" alt="" width="150"
+          <img src="../assets/img/yield-light.png" alt="" width="150"
         /></nuxt-link>
       </div>
       <div class="form">
@@ -155,7 +155,10 @@ export default {
             width: 350px;
           }
           button:hover {
-            background-color: #0b71e5;
+            background-color: #fff;
+            color: blue;
+            border: 1px solid blue;
+            cursor: pointer;
           }
         }
       }

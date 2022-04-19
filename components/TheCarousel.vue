@@ -86,6 +86,8 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@500&family=Poppins:wght@300&display=swap');
+
 .main {
   padding: 30px 3%;
   background-color: #fcf7ee;
@@ -118,17 +120,17 @@ export default {
             border: 0px;
             min-height: 130px;
             margin-top: 25px;
-            background-color: #4671ca;
+            background-color: blue;
             @media screen and (min-width: 800px) {
               height: 90px;
             }
           }
         }
         .blue {
-          color: #4671ca;
+          color: blue;
         }
         h2 {
-          font-family: 'Poppins', sans-serif;
+          font-family: 'DM Mono', monospace;
           font-weight: 700;
           transition: 0.5s;
         }

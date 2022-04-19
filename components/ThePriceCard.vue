@@ -30,7 +30,7 @@ export default {}
   justify-content: center;
   align-items: center;
   font-family: 'Poppins', sans-serif;
-  background-color: #2a5ac2;
+  background-color: blue;
   border-radius: 1rem;
   max-width: 22rem;
   .card {

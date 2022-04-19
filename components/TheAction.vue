@@ -67,14 +67,15 @@ section {
   .main-card {
     margin-bottom: 40px;
     padding: 1.5rem;
-    max-width: 450px;
+    margin: 0rem 2rem;
+    max-width: 400px;
     border-radius: 10px;
     .head {
       h1 {
         font-size: 26px;
       }
       p {
-        font-family: 'Poppisns', sans-serif;
+        font-family: 'Poppins', sans-serif;
       }
     }
 
@@ -106,7 +107,7 @@ section {
 
         button {
           background-color: transparent;
-          color: #4671ca;
+          color: blue;
         }
       }
     }
@@ -114,7 +115,7 @@ section {
       background-color: #fdf5e7;
     }
     .startup {
-      background-color: #e6ebf3;
+      background-color: #e0efff;
     }
   }
 }
@@ -126,9 +127,13 @@ section {
     justify-content: start;
     margin: 10px 30px;
 
+    .head {
+      padding-left: 0px;
+    }
     .cards {
       display: flex;
       flex-direction: column;
+      margin-top: 3rem;
     }
   }
 }

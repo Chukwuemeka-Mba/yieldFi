@@ -5,7 +5,7 @@
     <section class="">
       <div class="img">
         <nuxt-link to="/">
-          <img src="../assets/img/yield-dark.png" alt="" width="150"
+          <img src="../assets/img/yield-light.png" alt="" width="150"
         /></nuxt-link>
       </div>
       <div class="form">
@@ -81,9 +81,11 @@ export default {}
           font-size: 15px;
         }
         input {
-          height: 30px;
-          width: 350px;
+          height: 40px;
           margin-bottom: 1rem;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+          padding: 0.1rem 0.5rem;
         }
         .forgot {
           font-family: 'Poppins', 'sans-serif';
@@ -96,6 +98,12 @@ export default {}
         a {
           button {
             width: 350px;
+          }
+          button:hover {
+            background-color: #fff;
+            color: blue;
+            border: 1px solid blue;
+            cursor: pointer;
           }
         }
       }

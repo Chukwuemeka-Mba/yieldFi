@@ -13,7 +13,7 @@ export default {}
 button {
   font-family: 'Poppins', sans-serif;
   height: 46px;
-  background-color: #2a5ac2;
+  background-color: blue;
   border: 0px;
   border-radius: 5px;
   padding: 5px 30px;

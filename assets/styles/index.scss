@@ -1,47 +1,12 @@
 // Mixins
-
-@mixin fr {
-  display: flex;
-  flex-direction: row;
-}
-@mixin fc {
-  display: flex;
-  flex-direction: column;
-}
-
-@mixin aic {
-  display: flex;
-  align-items: center;
-}
-
-@mixin jcc {
-  display: flex;
-  justify-content: center;
-}
-@mixin inria {
-  font-family: 'Inria', sans-serif;
-}
-
-a {
-  @include inria();
-  text-decoration: none;
-  color: #000;
-}
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@500&family=Poppins:wght@300&display=swap');
 
 p {
-  @include inria();
+  font-family: 'Poppins', sans-serif;
 }
 
 h1 {
-  @include inria();
+  font-family: 'DM Mono', monospace;
 }
 
 //Color Scheme
-.scheme {
-  background-color: #010b12;
-  others: #010b12;
-  numbers: #39ff13;
-  buttons: #9cff00;
-  green: #0c8900;
-  lighter: #2bc20e;
-}

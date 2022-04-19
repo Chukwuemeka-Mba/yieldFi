@@ -78,7 +78,7 @@ export default {
   border-radius: 5px;
   .arrow {
     display: block;
-    color: #265a91;
+    color: blue;
     font-weight: 900;
   }
 }

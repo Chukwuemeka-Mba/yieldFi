@@ -2,19 +2,6 @@
   <div class="drop" @mouseover="showMenu" @mouseleave="hideMenu">
     <div class="row hover">
       <p>{{ item.name }}</p>
-
-      <div v-if="dropList != ''" class="hover">
-        <font-awesome-icon
-          :class="{ icon2: !setHidden }"
-          icon="caret-down"
-          @click="showMenu"
-        />
-        <font-awesome-icon
-          :class="{ icon1: setHidden }"
-          icon="caret-up"
-          @click="hideMenu"
-        />
-      </div>
     </div>
     <div class="drop-list">
       <div
@@ -63,7 +50,7 @@ export default {
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
 .drop {
-  background-color: #fff;
+  margin-right: 1rem;
   .row {
     display: flex;
     flex-direction: row;
@@ -77,7 +64,7 @@ export default {
       text-align: left;
     }
     .hover:hover {
-      color: #265a91;
+      color: #2a5ac2;
     }
   }
 }
@@ -92,9 +79,9 @@ export default {
   display: none;
 }
 .hover:hover {
-  color: #265a91;
+  color: blue;
   p:hover {
-    color: #265a91;
+    color: blue;
   }
 }
 .drop-list {

@@ -75,7 +75,7 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@500&family=Poppins:wght@300&display=swap');
 
 @mixin fr {
   display: flex;
@@ -104,11 +104,10 @@ export default {
     font-size: 25px;
   }
   h1:hover {
-    color: #2a5ac2;
+    color: blue;
   }
 }
 .action {
-  @include inria();
   margin-left: 40px;
   h1 {
     box-sizing: border-box;
@@ -116,7 +115,7 @@ export default {
     margin: 0;
     min-width: 0;
     font-weight: 600;
-    font-size: 24px;
+    font-size: 25px;
     line-height: 32px;
     margin-top: 40px;
     margin-bottom: 16px;
@@ -125,7 +124,7 @@ export default {
   button {
     font-family: 'Poppins', sans-serif;
     height: 46px;
-    background-color: #2a5ac2;
+    background-color: blue;
     border: 0px;
     border-radius: 5px;
     padding: 5px 30px;
@@ -136,12 +135,12 @@ export default {
 .table {
   padding: 20px 10px;
   font-family: 'Poppins', sans-serif;
-  min-width: 1000px;
+  min-width: 1200px;
   overflow-x: scroll;
 }
 table {
   font-family: 'Poppins', sans-serif;
-  width: 90%;
+  width: 100%;
   height: auto;
   overflow-y: hidden;
   text-align: start;
